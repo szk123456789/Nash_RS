@@ -1,18 +1,41 @@
-# What We Have Changed in OpenRLHF for Nash-RS
+# Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium
 
-- add `openrlhf.models.NashRS_utils.py`
+This repository is the official PyTorch implementation of paper: Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium
 
-- add `openrlhf.trainer.ppo_utils.NashRS_experience_maker.py`, also add this to `openrlhf.trainer.ppo_utils.__init__.py`
+**Kaizhao Liu, Qi Long, Zhekun Shi, Weijie J. Su, Jiancong Xiao (using alphabetical order)**
 
-- add `openrlhf.trainer.NashRS_ppo_trainer.py`, also add this to `openrlhf.trainer.__init__.py`
+**arXiv**: [https://arxiv.org/abs/2503.10990](https://arxiv.org/abs/2503.10990)
 
-- add `nash_main.py`, `nash.main.sh`
+## Abstract
 
-  Similar things have been done to implement Online-IPO.
+Aligning large language models (LLMs) with diverse human preferences is critical for ensuring
+fairness and informed outcomes when deploying these models for decision-making. In this
+paper, we seek to uncover fundamental statistical limits concerning aligning LLMs with human
+preferences, with a focus on the probabilistic representation of human preferences and the
+preservation of diverse preferences in aligned LLMs. We first show that human preferences
+can be represented by a reward model if and only if the preference among LLM-generated
+responses is free of any Condorcet cycle. Moreover, we prove that Condorcet cycles exist
+with probability converging to one exponentially fast under a probabilistic preference model,
+thereby demonstrating the *impossibility* of fully aligning human preferences using reward-based
+approaches such as reinforcement learning from human feedback. Next, we explore the conditions
+under which LLMs would employ mixed strategies—meaning they do not collapse to a single
+response—when aligned in the limit using a non-reward-based approach, such as Nash learning
+from human feedback (NLHF). We identify a necessary and sufficient condition for mixed
+strategies: the absence of a response that is preferred over all others by a majority. As a blessing,
+we prove that this condition holds with high probability under the probabilistic preference model,
+thereby highlighting the statistical *possibility* of preserving minority preferences without explicit
+regularization in aligning LLMs. Finally, we leverage insights from our statistical results to
+design a novel, computationally efficient algorithm for finding Nash equilibria in aligning LLMs
+with NLHF. Our experiments show that Llama-3.2-1B, aligned with our algorithm, achieves a
+win rate of 60.55% against the base model.
 
-# Running on 4$\times$A800-80GB
+## Main Results
 
-## PPO Command
+## Code
+
+Throughout the experimental process, we implement our algorithm (Nash-RS) and baseline method (Online-IPO) using [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We directly use PPO implemented in [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) for the comparison. 
+
+To run PPO method, one can use the following command
 
 ```shell
 deepspeed --module openrlhf.cli.train_ppo \
@@ -46,3 +69,8 @@ deepspeed --module openrlhf.cli.train_ppo \
   --actor_init_on_gpu \
   --truncate_steps 512
 ```
+
+To run Nash-RS (ours) and Online-IPO, one can use `nash_main.sh` and `ipo_main.sh` respectively.
+
+## Citation
+
