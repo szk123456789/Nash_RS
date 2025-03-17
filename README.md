@@ -1,6 +1,6 @@
 # Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium
 
-This repository is the official PyTorch implementation of paper: Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium
+This repository is the official PyTorch implementation of paper: Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium.
 
 **Kaizhao Liu, Qi Long, Zhekun Shi, Weijie J. Su, Jiancong Xiao (using alphabetical order)**
 
