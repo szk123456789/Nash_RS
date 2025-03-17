@@ -35,6 +35,8 @@ win rate of 60.55% against the base model.
 
 Throughout the experimental process, we implement our algorithm (Nash-RS) and baseline method (Online-IPO) using [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We directly use PPO implemented in [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) for the comparison. 
 
+### PPO
+
 To run PPO method, one can use the following command
 
 ```shell
@@ -70,7 +72,24 @@ deepspeed --module openrlhf.cli.train_ppo \
   --truncate_steps 512
 ```
 
+### Nash-RS and Online-IPO
+
 To run Nash-RS (ours) and Online-IPO, one can use `nash_main.sh` and `ipo_main.sh` respectively.
+
+### Evaluation
+
+We evaluate the fine-tuned model by computing the mean reward on the (training) testing prompts. The script `eval_reward_openrlhf.py` contains the implementation for this calculation, and one can directly use `eval_reward_openrlhf.sh` to perform the evaluation with specified parameters. For example, the following command can be executed:
+
+```shell
+bash eval_reward_openrlhf.sh \
+   --pretrain [the path where you save the model you want to evaluate] \
+   --output_path [the path where you save your evaluation results] \
+   --training_steps 512 \ # using the first 512 prompts for fine-tuning
+   --eval_train_steps 128  \
+   --eval_test_steps 128  \
+```
+
+### Implicit Reward Visualization
 
 To obtain the Figure 5 in the paper, one can run `implicit_reward.ipynb`, and the visualization results are shown in `implicit_reward_visualization.pdf`. 
 
