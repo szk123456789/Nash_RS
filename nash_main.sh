@@ -20,7 +20,7 @@ read -r -d '' training_commands <<EOF
    --bf16 \
    --actor_learning_rate 5e-6 \
    --critic_learning_rate 9e-5 \
-   --init_kl_coef 0.18 \
+   --init_kl_coef 0.15 \
    --prompt_data OpenRLHF/prompt-collection-v0.1 \
    --input_key context_messages \
    --apply_chat_template \
