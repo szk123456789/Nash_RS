@@ -72,5 +72,7 @@ deepspeed --module openrlhf.cli.train_ppo \
 
 To run Nash-RS (ours) and Online-IPO, one can use `nash_main.sh` and `ipo_main.sh` respectively.
 
+To obtain the Figure 5 in the paper, one can run `implicit_reward.ipynb`, and the visualization results are shown in `implicit_reward_visualization.pdf`. 
+
 ## Citation
 
