@@ -83,12 +83,12 @@ To run Nash-RS (ours) and Online-IPO, one can use `nash_main.sh` and `ipo_main.s
 bash nash_main.sh \
    --pretrain [the path where you save the pretrained model] \
    --save_path [the path where you save your fine-tuned models] \
-   --ckpt_path [the path where you save your checkpoints] \
+   --ckpt_path [the path where you save your checkpoints]
 # Online-IPO 
 bash ipo_main.sh \
    --pretrain [the path where you save the pretrained model] \
    --save_path [the path where you save your fine-tuned models] \
-   --ckpt_path [the path where you save your checkpoints] \
+   --ckpt_path [the path where you save your checkpoints]
 ```
 
 ### Evaluation
@@ -101,7 +101,7 @@ bash eval_reward_openrlhf.sh \
    --output_path [the path where you save your evaluation results] \
    --training_steps 512 \ # using the first 512 prompts for fine-tuning
    --eval_train_steps 128  \
-   --eval_test_steps 128  \
+   --eval_test_steps 128
 ```
 
 ### Implicit Reward Visualization
