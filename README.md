@@ -76,7 +76,20 @@ deepspeed --module openrlhf.cli.train_ppo \
 
 ### Nash-RS and Online-IPO
 
-To run Nash-RS (ours) and Online-IPO, one can use `nash_main.sh` and `ipo_main.sh` respectively.
+To run Nash-RS (ours) and Online-IPO, one can use `nash_main.sh` and `ipo_main.sh` respectively with specified parameters. For example, the following command can be executed:
+
+```shell
+# Nash-RS (ours)
+bash nash_main.sh \
+   --pretrain [the path where you save the pretrained model] \
+   --save_path [the path where you save your fine-tuned models] \
+   --ckpt_path [the path where you save your checkpoints] \
+# Online-IPO 
+bash ipo_main.sh \
+   --pretrain [the path where you save the pretrained model] \
+   --save_path [the path where you save your fine-tuned models] \
+   --ckpt_path [the path where you save your checkpoints] \
+```
 
 ### Evaluation
 
