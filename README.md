@@ -31,6 +31,8 @@ win rate of 60.55% against the base model.
 
 ## Main Results
 
+![main_results](/Users/szk123456/Desktop/Github_repo/Nash_RS/main_results.png)
+
 ## Code
 
 Throughout the experimental process, we implement our algorithm (Nash-RS) and baseline method (Online-IPO) using [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We directly use PPO implemented in [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF) for the comparison. 
