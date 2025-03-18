@@ -2,10 +2,10 @@ set -x
 
 read -r -d '' training_commands <<EOF
 /root/nash_main.py \
-   --pretrain  /root/.cache/huggingface/hub/models--meta-llama--Llama-3.2-1B-Instruct\
+   --pretrain $1 \
    --reward_pretrain OpenRLHF/Llama-3-8b-rm-mixture \
-   --save_path /root/autodl-tmp/ckpt/models_NashRS_512prompt_trivial-12th \
-   --ckpt_path /root/autodl-tmp/ckpt/checkpoints_NashRS_512prompt_trivial-12th
+   --save_path $2 \
+   --ckpt_path $3 \
    --save_steps -1 \
    --logging_steps 1 \
    --eval_steps -1 \
