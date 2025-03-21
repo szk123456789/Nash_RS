@@ -110,3 +110,11 @@ To obtain the Figure 5 in the paper, one can run `implicit_reward.ipynb`, and th
 
 ## Citation
 
+```latex
+@article{liu2025statistical,
+  title={Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium},
+  author={Liu, Kaizhao and Long, Qi and Shi, Zhekun and Su, Weijie J and Xiao, Jiancong},
+  journal={arXiv preprint arXiv:2503.10990},
+  year={2025}
+}
+```
